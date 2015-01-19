@@ -56,7 +56,7 @@ module.exports =
     convert = (json_schema) ->
       switch
         when json_schema.$ref?
-          type_ref_to_mongoose_type[json_schema.$ref] ? throw new Error "Unsupported $ref value: #{json_schema.$ref}"
+          type_ref_to_mongoose_type[json_schema.$ref] ? type_ref_to_mongoose_type['#/definitions/objectid']
         when json_schema.type is 'string' and json_schema.format in ['date', 'date-time']
           type_ref_to_mongoose_type['#/definitions/date_or_datetime']
         when type_string_to_mongoose_type[json_schema.type]?

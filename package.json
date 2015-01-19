@@ -33,7 +33,8 @@
   },
   "scripts": {
     "test": "make test",
-    "test-cov": "make test-cov"
+    "test-cov": "make test-cov",
+    "postinstall": "make build"
   },
   "main": "index"
 }
